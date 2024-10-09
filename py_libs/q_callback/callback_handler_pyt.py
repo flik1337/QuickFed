@@ -1,8 +1,9 @@
 import torch
+from .callback_handler import CallbackHandlerBase
 
-class CallbackHandlerPyt:
+class CallbackHandlerPyt(CallbackHandlerBase):
     def __init__(self, model, device, print_weights=False):
-        self.model = model
+        super().__init__(model)
         self.device = device
         self.print_weights = print_weights
 

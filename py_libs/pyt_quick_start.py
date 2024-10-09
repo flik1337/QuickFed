@@ -3,7 +3,7 @@ from torch import nn
 from torch.utils.data import DataLoader
 from torchvision import datasets
 from torchvision.transforms import ToTensor
-from QCallback.CallbackHandlerPyt import CallbackHandlerPyt
+from q_callback.callback_handler_pyt import CallbackHandlerPyt
 
 def train(dataloader, model, loss_fn, optimizer, callback_handler):
     size = len(dataloader.dataset)
