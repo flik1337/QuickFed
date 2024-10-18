@@ -19,3 +19,5 @@ class CallbackHandlerPyt(CallbackHandlerBase):
                 modified_data = original_data * torch.rand_like(original_data)  # Example modification: random scaling
                 param.data = modified_data  # Assign modified data back to the parameter
                 print(f"Modified {name}: {param.data}\n")
+
+

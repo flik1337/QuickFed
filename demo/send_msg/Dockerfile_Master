@@ -1,0 +1,12 @@
+# 使用Python镜像
+FROM python:3.8-slim
+
+# 安装依赖
+RUN pip install flask requests
+
+# 添加Python脚本
+ADD . /app
+WORKDIR /app
+
+# 运行Python脚本
+CMD ["python", "./master.py"]
