@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package quickFed;
+
+// 定义 NDArray 消息
+message NDArray {
+    string dtype = 1;             // 数据类型，例如 "float32"
+    repeated int32 shape = 2;     // 数组的形状（维度）
+    bytes data = 3;               // 数组数据，序列化为字节
+}
+
+// 定义 WeightsEntry，用于存储每个权重
+message WeightsEntry {
+    string key = 1;               // 权重的名称，例如 "layer1_weights"
+    NDArray value = 2;            // 对应的 NDArray 对象
+}
+
+// 定义 Weights 消息，用于存储多个权重
+message Weights {
+    map<string, NDArray> weights = 1; // 使用 map 存储多个权重，键为名称，值为 NDArray
+}
